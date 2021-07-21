@@ -1,0 +1,33 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  background-color: #000;
+}
+
+.flex-container {
+  width: 80vw;
+  height: 40vh;
+  margin: auto;
+  padding: 20px;
+  background-color: yellow;
+  display: flex;
+  /* row(default)|row-reverse|column|column-reverse */
+  /* flex-direction: column-reverse; */
+  flex-wrap: wrap;
+  align-content: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.flex-item {
+  width: 300px;
+  height: 100px;
+  /* flex:  1; */
+  background-color: greenyellow;
+  border: 1px solid #fff;
+}
+
+/* .flex-item:nth-child(2){
+  flex-basis: 300px;
+} */
