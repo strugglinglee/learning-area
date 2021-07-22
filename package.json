@@ -1,0 +1,29 @@
+{
+  "name": "learning-area",
+  "version": "1.0.0",
+  "description": "每日坚持学习 持续性学习前端知识",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strugglinglee/learning-area.git"
+  },
+  "author": "alibase",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/strugglinglee/learning-area/issues"
+  },
+  "homepage": "https://github.com/strugglinglee/learning-area#readme",
+  "devDependencies": {
+    "husky": "^7.0.1",
+    "lint-staged": "^11.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo 我要提交代码啦",
+      "commit-msg": "echo $HUSKY_GIT_PARAMS $HUSKY_GIT_STDIN",
+      "pre-push": "echo 提交代码前需要先进行单元测试 && npn test"
+    }
+  }
+}
