@@ -42,3 +42,8 @@
 为了在 bundle 中删除它们。我们将使用 -p(production) 这个 webpack 编译标记，来启用 **uglifyjs** 压缩插件。
 > 注意，--optimize-minimize 标记也会在 webpack 内部调用 UglifyJsPlugin。
 > 从 webpack 4 开始，也可以通过 "mode" 配置选项轻松切换到压缩输出，只需设置为 "production"
+
+#### 其他压缩插件推荐
+
+- BabelMinifyWebpackPlugin
+- ClosureCompilerPlugin
