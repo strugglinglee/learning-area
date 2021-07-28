@@ -1,5 +1,6 @@
 {
   "name": "webpack-learns",
+  "sideEffects": false,
   "version": "1.0.0",
   "description": "学习官方文档",
   "private": true,
