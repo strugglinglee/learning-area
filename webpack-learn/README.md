@@ -6,3 +6,5 @@ Guides(指南) -> Concepts（概念） -> Configuration（配置） -> Loaders -
 
 **docs文件夹下为学习webpack的笔记（按学习顺序分类）**
 
+
+JavaScript 可以压缩、拆分 chunk 和懒加载，以提高性能。打包是 web 开发中最重要的挑战之一。

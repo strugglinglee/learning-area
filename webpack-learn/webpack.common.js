@@ -6,7 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin'); //3.0+版本引�
 
 module.exports = {
   entry: {
-    index: './src/index.js',
+    main: './src/index.js',
+    vendor: ['lodash']
     // another: './src/another-module.js',
   },
   module: {
@@ -26,24 +27,24 @@ module.exports = {
     })
   ],
   output: {
-    filename: '[name].bundle.js', // name即入口key
+    filename: '[name].[chunkhash].js', // name即入口key
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    chunkFilename: '[name].bundle.js'// 决定非入口 chunk 的名称
+    chunkFilename: '[name].[chunkhash].js'// 决定非入口 chunk 的名称
   },
   //optimization与entry/plugins同级
-  // optimization: {
-  //   runtimeChunk: {
-  //     name: 'manifest',
-  //   },
-  //   splitChunks: {
-  //     maxInitialRequests: 10,
-  //     cacheGroups: {
-  //       common: {
-  //         name: 'common',
-  //         //chunks: 'all'
-  //       },
-  //     },
-  //   },
-  // },
+  optimization: {
+    runtimeChunk: {
+      name: 'manifest',
+    },
+    splitChunks: {
+      maxInitialRequests: 10,
+      cacheGroups: {
+        common: {
+          name: 'common',
+          //chunks: 'all'
+        },
+      },
+    },
+  },
 };
