@@ -2,7 +2,7 @@
 
 所有看似优秀的事情，都经过日复一日的努力💪
 
-计划学习的内容包括算法、计算机网络、css、javaScript、webpack、vite、vue、react等等...
+计划学习的内容包括算法、计算机网络、css、js、ts、webpack、vite、vue、react等等...
 
 **学习周期--两周**
 
@@ -10,4 +10,4 @@
 - javascript高级程序设计（第三章剩余部分+第四章）
 - 算法刷题
 - 学习webpack + babel
-- 输出至少四篇有质量的学习文章
+- 输出至少两篇有质量的学习文章
