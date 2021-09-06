@@ -2,7 +2,7 @@
 
 #### 前置知识
 
-你已经安装好oh-my-zsh
+你已经安装好好用的命令行工具oh-my-zsh
 
 #### zsh基本配置
 
@@ -45,7 +45,17 @@ p10k configure
 
 #### Plugins配置
 在此处 已有的配置git的基础上
-我额外配置了`autojump`,`zsh-autosuggestions`,`zsh-syntax-highlighting`三个插件
+##### autojump
+
+1. `brew install autojump`
+2. ./zshrc文件中需配置
+```
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+```
+
+##### 自动补全工具`zsh-autosuggestions`
+
+##### 高亮工具`zsh-syntax-highlighting`
 
 1. 下载插件
 
@@ -70,3 +80,7 @@ plugins=(
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 source $ZSH/oh-my-zsh.sh
 ```
+
+#### 成果展示
+
+![alt](./images/2.png)
