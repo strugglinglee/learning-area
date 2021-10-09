@@ -7,11 +7,11 @@
 3. 实战vue3.0
 4. vue3.0源码
 
-#### 文档血虚
+#### 文档学习
 
-[vue3.0官方文档](https://vue3js.cn/docs/zh/guide/introduction.html)
-[组合式 API 征求意见稿](https://vue3js.cn/vue-composition/)
-[vue组合式Api](https://vue3js.cn/vue-composition-api/#setup)
+1. [组合式 API 征求意见稿](https://vue3js.cn/vue-composition/)
+2. [vue组合式Api](https://vue3js.cn/vue-composition-api/#setup)
+3. [vue3.0官方文档](https://vue3js.cn/docs/zh/guide/introduction.html)
 
 ### 其他学习资料
 
