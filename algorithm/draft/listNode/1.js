@@ -30,6 +30,7 @@ const L2 = {
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
+ * 有序排列两个有序链表
  */
 const mergeTwoLists = function (l1, l2) {
   // 定义头结点，确保链表可以被访问到
