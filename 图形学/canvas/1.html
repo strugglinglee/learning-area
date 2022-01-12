@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      #canvas {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <button class="downloadBtn">下载</button>
+    <script>
+      var canvas = document.getElementById('canvas');
+      var a = document.createElement('a');
+      var downloadBtn = document.querySelector('.downloadBtn');
+      var ctx = canvas.getContext('2d');
+
+      canvas.width = 300;
+      canvas.height = 300;
+
+      // 画圆
+      ctx.fillStyle = 'yellow';
+      ctx.fillRect(0, 0, 50, 100);
+
+      ctx.strokeStyle = 'blue';
+      ctx.strokeRect(0, 120, 50, 100);
+
+      var img = new Image();
+      img.onload = () => {
+        // 画图片
+        ctx.drawImage(img, 60, 0);
+        // toImage
+        var dataImg = new Image();
+        dataImg.src = canvas.toDataURL('image/png');
+        document.body.appendChild(dataImg); // 长按图片保存
+      };
+      img.crossOrigin = 'anonymous';
+      img.src =
+        'https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7807eff149034ad8bd10de8dfc749ef5~tplv-k3u1fbpfcp-no-mark:720:720:720:480.awebp?' +
+        +new Date();
+
+      downloadBtn.addEventListener(
+        'click',
+        function (event) {
+          a.href = a.download = canvas.toDataURL('image/png');
+          a.click();
+        },
+        false
+      );
+    </script>
+  </body>
+</html>
