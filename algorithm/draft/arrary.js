@@ -1,19 +1,3 @@
-# 数组的应用
-
-## 求和问题
-
-> 真题描述： 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-> nums = [2, 7, 11, 15], target = 9
-> 返回 [0,1]
-
-### 解题思路
-
-1. 有两层循环时，先反思一下，能不能用空间换时间，把它优化成一层循环。
-2. 几乎所有的求和问题，都可以转化为求差问题。
-
-### 解法一
-
-```javascript
 const getTwoSum = (nums, target) => {
   // 缓存已遍历项 key记录值 值记录下标
   const diffs = {};
@@ -25,11 +9,9 @@ const getTwoSum = (nums, target) => {
     diffs[nums[i]] = i;
   }
 };
-```
 
-### 解法二
+// getTwoSum([4, 1, 5, 6], 9);
 
-```javascript
 const getTwoSum2 = (nums, target) => {
   // 缓存已遍历项 key记录值 值记录下标
   const diffMap = new Map();
@@ -40,65 +22,16 @@ const getTwoSum2 = (nums, target) => {
     diffMap.set(nums[i], i);
   }
 };
-```
 
-## 双指针
+// getTwoSum2([4, 1, 5, 6], 9);
 
-### 应用范围
-
-双指针法用在涉及求和、比大小类的**数组**题目
-
-### 前提
-
-该数组必须有序
-
-> 否则双指针根本无法帮助我们缩小定位的范围，压根没有意义。
-
-### 真题应用
-
-> 给你两个有序整数数组 nums1 和 nums2，请你将 nums2 合并到 nums1 中，使 nums1 成为一个有序数组。
->
-> 输入:
-> nums1 = [1,2,3,0,0,0], m = 3
-> nums2 = [2,5,6], n = 3
-> 输出: [1,2,2,3,5,6]
-
-每次只对指针所指的元素进行比较。
-**取其中较大的元素，把它从 nums1 的末尾往前面填补：**
-
-```text
-// - 代表指针所在
-    -
-1,2,3,0,0,0
-    -
-2,5,6
-
-    -
-1,2,3,0,0,6
-    -
-  2,5
-
-    -
-1,2,3,0,5,6
-    -
-    2
-
-    -
-1,2,3,0,5,6
-    -
-    2
-
-  -
-1,2,0,3,5,6
-  -
-  2
-
-1,2,2,3,5,6
-```
-
-#### for 循环实现
-
-```js
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
 const merge = function (nums1, m, nums2, n) {
   const tlen = nums1.length;
   // nums1最后一位
@@ -126,11 +59,16 @@ const merge = function (nums1, m, nums2, n) {
     }
   }
 };
-```
 
-#### while 实现
+// merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
 
-```js
+/**
+ * @param {number[]} nums1
+ * @param {number} m
+ * @param {number[]} nums2
+ * @param {number} n
+ * @return {void} Do not return anything, modify nums1 in-place instead.
+ */
 const merge2 = function (nums1, m, nums2, n) {
   let k = m + n - 1;
   // nums1最后一位
@@ -157,42 +95,61 @@ const merge2 = function (nums1, m, nums2, n) {
   }
   return nums1;
 };
-```
 
-#### 为什么是从后往前填补？
+// merge2([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3);
 
-因为是要把所有的值合并到 nums1 里，所以说我们这里可以把 nums1 看做是一个`容器`。但是这个容器，它不是空的，而是前面几个坑有内容的。如果我们从前往后填补，就没法直接往对应的坑位赋值了（会产生值覆盖）。
+const threeSum = function (nums) {
+  // 排序
+  nums = nums.sort((a, b) => a - b);
+  let n = 0;
+  const len = nums.length;
+  let res = [];
 
-从后往前填补，我们填的都是没有内容的坑，这样会省掉很多麻烦。
+  // 给指针预留两个空位
+  while (n < len - 2) {
+    let r = len - 1;
+    let l = n + 1;
+    // 固定元素
+    const fixedOne = nums[n];
 
-#### 有效部分不一样
+    // 跳过相同元素 判断当前元素和下一个元素是否相等
+    if (n > 0 && fixedOne === nums[n - 1]) {
+      n++;
+      continue;
+    }
 
-- 如果提前遍历完的是 `nums1` 的有效部分，剩下的是 `nums2`。那么这时意味着 `nums1` 的头部空出来了，直接把 `nums2` 整个补到 `nums1` 前面去即可。
+    while (l < r) {
+      let rightOne = nums[r];
+      let leftOne = nums[l];
 
-- 如果提前遍历完的是 nums2，剩下的是 nums1。由于容器本身就是 nums1，所以此时不必做任何额外的操作。
+      if (fixedOne + rightOne + leftOne < 0) {
+        l++;
+        // 跳过相同元素 判断当前元素和下一个元素是否相等
+        while (l < r && nums[l] === nums[l - 1]) l++;
+      } else if (fixedOne + rightOne + leftOne > 0) {
+        r--;
+        // 跳过相同元素  判断当前元素和上一个元素是否相等
+        while (l < r && nums[r] === nums[r + 1]) r--;
+      } else {
+        res.push([fixedOne, rightOne, leftOne]);
+        l++;
+        r--;
 
-## 对撞指针
+        // 跳过相同元素 判断当前元素和下一个元素是否相等
+        while (l < r && nums[l] === nums[l - 1]) l++;
+        // 跳过相同元素 判断当前元素和上一个元素是否相等
+        while (l < r && nums[r] === nums[r + 1]) r--;
+      }
+    }
 
-左右指针一起从两边往中间位置相互迫近，这样的特殊双指针形态，被称为“对撞指针”。
+    n++;
+  }
 
-### 什么时候你需要联想到对撞指针？
+  return res;
+};
 
-两个关键字——“有序”和“数组”。
-普通双指针走不通，立刻想对撞指针！
+threeSum([-1, 0, 1, 2, -1, -4]);
 
-### 真题应用
-
-> 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。
-
-#### 解题思路
-
-1. 把数组变得有序
-2. 对数组进行遍历 一个数固定 指针放右边 一个放最前 一个放最后
-3. 相加之和大于0，说明右侧的数偏大了，右指针左移
-4. 相加之和小于0，说明左侧的数偏小了，左指针右移
-5. 重复元素的跳过处理
-
-```js
 /**
  * @param {number[]} nums
  * @return {number[][]}
@@ -248,4 +205,4 @@ const threeSum2 = function (nums) {
   return res;
 };
 
-```
+// threeSum2([-1, 0, 1, 2, -1, -4]);
