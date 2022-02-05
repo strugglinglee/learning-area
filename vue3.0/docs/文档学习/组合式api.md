@@ -86,3 +86,78 @@ const Child = {
 ## setup组件选项
 
 在**组件创建之前**执行，一旦 props 被解析，就将作为组合式 API 的入口。
+
+### props
+
+解构 prop 在 setup 函数中使用 toRefs 函数来完成此操作：
+
+```javascript
+// MyBook.vue
+import { toRefs } from 'vue'
+setup(props) {
+  const { title } = toRefs(props)
+  console.log(title.value)
+}
+```
+
+如果 title 是可选的 prop，则传入的 props 中可能没有 title 。在这种情况下，toRefs 将不会为 title 创建一个 ref 。你需要使用 toRef 替代它：
+
+```javascript
+// MyBook.vue
+import { toRef } from 'vue'
+setup(props) {
+  const title = toRef(props, 'title')
+  console.log(title.value)
+}
+```
+
+### Context
+
+执行 setup 时，你只能访问以下 property：
+
+- props
+- attrs
+- slots
+- emit
+
+context 是一个普通的 js 对象，也就是说，它不是响应式的，这意味着你可以安全地对 context 使用 ES6 解构。
+
+attrs 和 slots 是有状态的对象，它们总是会随组件本身的更新而更新。这意味着你应该避免对它们进行解构，并始终以 attrs.x 或 slots.x 的方式引用 property。
+
+请注意，与 props 不同，attrs 和 slots 的 property 是非响应式的。如果你打算根据 attrs 或 slots 的更改应用副作用，那么应该在 onBeforeUpdate 生命周期钩子中执行此操作。
+
+```javascript
+export default {
+  setup(props, context) {
+    // Attribute (非响应式对象，等同于 $attrs)
+    console.log(context.attrs)
+
+    // 插槽 (非响应式对象，等同于 $slots)
+    console.log(context.slots)
+
+    // 触发事件 (方法，等同于 $emit)
+    console.log(context.emit)
+
+    // 暴露公共 property (函数)
+    console.log(context.expose)
+  }
+}
+```
+
+### this使用
+
+在 setup() 内部，this 不是该活跃实例的引用，因为 setup() 是在解析其它组件选项之前被调用的，所以 setup() 内部的 this 的行为与其它选项中的 this 完全不同。
+
+这使得 setup() 在和其它选项式 API 一起使用时可能会导致混淆。
+
+### beforeCreate 和 created 生命周期钩子
+
+setup 是围绕 beforeCreate 和 created 生命周期钩子运行的，所以不需要显式地定义它们。换句话说，在这些钩子中编写的任何代码都应该直接在 setup 函数中编写。
+
+### ref
+
+在渲染上下文中暴露 root，并通过 ref="root"，将其绑定到 div 作为其 ref。在虚拟 DOM 补丁算法中，如果 VNode 的 ref 键对应于渲染上下文中的 ref，则 VNode 的相应元素或组件实例将被分配给该 ref 的值。这是在虚拟 DOM 挂载/打补丁过程中执行的，因此模板引用只会在初始渲染之后获得赋值。
+
+作为模板使用的 ref 的行为与任何其他 ref 一样：
+
+它们是响应式的，可以传递到 (或从中返回) 复合函数中。
