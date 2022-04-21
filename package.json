@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "每日坚持学习 持续性学习前端知识",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev",
+    "build": "vuepress build"
   },
   "repository": {
     "type": "git",
@@ -17,7 +19,8 @@
   "homepage": "https://github.com/strugglinglee/learning-area#readme",
   "devDependencies": {
     "husky": "^7.0.1",
-    "lint-staged": "^11.0.1"
+    "lint-staged": "^11.0.1",
+    "vuepress": "^1.9.7"
   },
   "husky": {
     "hooks": {

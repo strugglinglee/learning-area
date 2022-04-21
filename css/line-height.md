@@ -13,7 +13,7 @@ height: 24px;
 #### 哪些元素是内联元素？
 
 display为inline/inline-block/inline-table的都属于内联元素。
-![](../../assets/images/line-height/2.png)
+![](../assets/images/line-height/2.png)
 
 从表现行为上来看，“内联元素”典型的特征就是和文字在一行显示，因此`文字/图片/按钮/输入框/下拉框`等表单控件也是内联元素。---引自 张鑫旭 《css世界》
 
@@ -49,7 +49,7 @@ display为inline/inline-block/inline-table的都属于内联元素。
 
 #### line-height+vertical-align:middle也只是近似的垂直居中
 
-![](../../assets/images/line-height/3.png)
+![](../assets/images/line-height/3.png)
 middle是指沿着基线往上1/2 x-height高度对齐，可以近似理解为字母x交叉点的位置
 
 > 并不是绝对的居中对齐，因为不同的字体在行内盒子中的位置不一样，比如微软雅黑就是一个下沉比较明显的字体，所有字符的位置都比其他字体要偏下一点，字母x的交叉点是在容器中分线的下面一点。
@@ -60,7 +60,7 @@ vertical-align:baseline其实就是vertical-align:0
 ```
 vertical-align:-5px;
 ```
-![](../../assets/images/line-height/4.png)
+![](../assets/images/line-height/4.png)
 
 #### 注意点： vertical-align作用条件
 
@@ -69,7 +69,7 @@ vertical-align:-5px;
 ### 探索：display:flex+align-items:center能实现精确的文字垂直居中吗？
 我们不如先来尝试下
 
-![](../../assets/images/line-height/5.png)
+![](../assets/images/line-height/5.png)
 可以见得，万能的flex布局实现了文字垂直居中，但文字受到多种因素的影响，精确的垂直居中其实是比较难实现的。
 
 ### 补充知识：div的高度是由行高决定的
@@ -100,7 +100,7 @@ span {
   <span></span>
 </div>
 ```
-![](../../assets/images/line-height/1.png)
+![](../assets/images/line-height/1.png)
 > 对幽灵空白节点的解释：可以认为在span元素的前面还有一个宽度为0的空白字符。
 
 ### 总结

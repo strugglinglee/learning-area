@@ -15,5 +15,5 @@
 
 ## 其他学习资料
 
-[Vue3.0源码学习入口](https://vue3js.cn/start/)
-[Vue3.0官方文档学习入口](https://vue3js.cn/docs/zh/guide/migration/introduction.html)
+1. [Vue3.0源码学习入口](https://vue3js.cn/start/)
+2. [Vue3.0官方文档学习入口](https://vue3js.cn/docs/zh/guide/migration/introduction.html)

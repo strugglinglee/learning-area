@@ -1,4 +1,4 @@
-# vue官方文档学习1
+# vue官方文档学习
 
 [官网地址](https://vuejs.bootcss.com/guide)
 
