@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vuepress dev",
-    "build": "vuepress build"
+    "build": "vuepress build",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,10 @@
   },
   "homepage": "https://github.com/strugglinglee/learning-area#readme",
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "husky": "^7.0.1",
-    "lint-staged": "^11.0.1",
+    "lint-staged": "^11.2.6",
     "vuepress": "^1.9.7"
   },
   "husky": {
@@ -28,5 +31,8 @@
       "commit-msg": "echo $HUSKY_GIT_PARAMS $HUSKY_GIT_STDIN",
       "pre-push": "echo 提交代码前需要先进行单元测试 && npn test"
     }
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix"
   }
 }
