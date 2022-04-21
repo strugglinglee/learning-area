@@ -296,7 +296,7 @@ module.exports = {
         children: [
           {
             title: "灵感想法",
-            path: "/others/ideas",
+            // path: "/others/ideas",
             children: [
               {
                 title: "配置化",
@@ -306,7 +306,7 @@ module.exports = {
           },
           {
             title: "名词解释",
-            path: "/others/名词解释",
+            // path: "/others/名词解释",
             children: [
               {
                 title: "基础",
@@ -352,7 +352,7 @@ module.exports = {
           },
           {
             title: "效率提升",
-            path: "/others/效率提升",
+            // path: "/others/效率提升",
             children: [
               {
                 title: "snippets基本语法",
