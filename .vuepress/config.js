@@ -127,7 +127,7 @@ module.exports = {
         ],
       },
       {
-        title: "GIT",
+        title: "Git",
         path: "/git",
         children: [
           {
@@ -230,7 +230,7 @@ module.exports = {
         ],
       },
       {
-        title: "DOCKER",
+        title: "Docker",
         path: "/docker",
         children: [
           {
@@ -252,7 +252,7 @@ module.exports = {
         ],
       },
       {
-        title: "NODE",
+        title: "Node.js",
         path: "/node",
         children: [
           {
@@ -276,7 +276,7 @@ module.exports = {
         ],
       },
       {
-        title: "VITE",
+        title: "Vite",
         path: "/vite",
         children: [
           {
