@@ -37,7 +37,7 @@ module.exports = {
         ],
       },
       {
-        title: "javascript",
+        title: "JS",
         path: "/javascript",
         children: [
           {
@@ -127,7 +127,7 @@ module.exports = {
         ],
       },
       {
-        title: "git",
+        title: "GIT",
         path: "/git",
         children: [
           {
@@ -189,7 +189,6 @@ module.exports = {
         children: [
           {
             title: "微信小程序",
-            path: "/业务相关/wechat",
             children: [
               {
                 title: "小程序登录逻辑",
@@ -231,7 +230,7 @@ module.exports = {
         ],
       },
       {
-        title: "docker",
+        title: "DOCKER",
         path: "/docker",
         children: [
           {
@@ -253,7 +252,7 @@ module.exports = {
         ],
       },
       {
-        title: "node",
+        title: "NODE",
         path: "/node",
         children: [
           {
@@ -277,7 +276,7 @@ module.exports = {
         ],
       },
       {
-        title: "vite",
+        title: "VITE",
         path: "/vite",
         children: [
           {
@@ -371,7 +370,7 @@ module.exports = {
           },
           {
             title: "oh-my-zsh",
-            path: "/others/oh-my-zsh/index.md",
+            path: "/others/oh-my-zsh/oh-my-zsh.md",
           },
         ],
       },

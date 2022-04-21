@@ -10,7 +10,7 @@
 `vim ~/.zshrc`
 zshrc文件中就是基本的配置所在了
 
-![alt](./images/1.png)
+![alt](./1.png)
 
 #### oh-my-zsh
 ```
@@ -84,4 +84,4 @@ source $ZSH/oh-my-zsh.sh
 
 #### 成果展示
 
-![alt](./images/2.png)
+![alt](./2.png)
