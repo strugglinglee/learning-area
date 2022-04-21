@@ -6,6 +6,24 @@
 
 计划学习的内容包括算法、计算机网络、css、js、ts、webpack、vite、vue、react等等...
 
+## 分仓库
+
+一、算法学习仓库
+
+- github地址: [https://github.com/strugglinglee/algorithm-learn](https://github.com/strugglinglee/algorithm-learn)
+- 访问链接: [https://strugglinglee.github.io/algorithm-learn/](https://strugglinglee.github.io/algorithm-learn/)
+
+二、webpack学习仓库
+
+- github地址: [https://github.com/strugglinglee/webpack-learn](https://github.com/strugglinglee/webpack-learn)
+- 访问链接: [https://strugglinglee.github.io/FE-interview/](https://strugglinglee.github.io/webpack-learn/)
+
+
+三、前端面试仓库
+
+- github地址: [https://github.com/strugglinglee/FE-interview](https://github.com/strugglinglee/FE-interview)
+- 访问链接: [https://strugglinglee.github.io/FE-interview/](https://strugglinglee.github.io/FE-interview/)
+
 
 ## 代码提交规范
 

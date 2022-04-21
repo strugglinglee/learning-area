@@ -99,12 +99,12 @@ module.exports = {
       {
         title: "VUE",
         path: "/vue",
-        collapsable: true,
+        // collapsable: true,
         children: [
           {
             title: "VUE3.0",
             path: "/vue/vue3.0",
-            collapsable: true,
+            // collapsable: true,
             children: [
               {
                 title: "组合式api",
@@ -143,12 +143,12 @@ module.exports = {
       {
         title: "前端工程化",
         path: "/前端工程化",
-        collapsable: true,
+        // collapsable: true,
         children: [
           {
             title: "代码规范",
             path: "/前端工程化/代码规范",
-            collapsable: true,
+            // collapsable: true,
             children: [
               {
                 title: "eslint",
@@ -174,7 +174,7 @@ module.exports = {
       {
         title: "图形学",
         path: "/图形学",
-        collapsable: true,
+        // collapsable: true,
         children: [
           {
             title: "图片生成方案",
@@ -185,7 +185,7 @@ module.exports = {
       {
         title: "业务相关",
         path: "/业务相关",
-        collapsable: true,
+        // collapsable: true,
         children: [
           {
             title: "微信小程序",
@@ -209,7 +209,7 @@ module.exports = {
       {
         title: "性能优化",
         // path: "/图形学",
-        collapsable: true,
+        // collapsable: true,
         children: [
           {
             title: "浏览器运行机制",
@@ -291,7 +291,7 @@ module.exports = {
       },
       {
         title: "其他",
-        collapsable: true,
+        // collapsable: true,
         path: "/others",
         children: [
           {
