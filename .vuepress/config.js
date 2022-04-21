@@ -56,7 +56,7 @@ module.exports = {
           },
           {
             title: "事件循环",
-            path: "/javascript/docs/事件循环",
+            path: "/javascript/docs/事件循环/eventLoop.md",
           },
           {
             title: "变量、作用域和内存",
@@ -296,20 +296,12 @@ module.exports = {
         path: "/others",
         children: [
           {
-            title: "promise",
-            path: "/重要知识整理/promise/promise.md",
-          },
-          {
-            title: "类与继承",
-            path: "/重要知识整理/类与继承.md",
-          },
-          {
             title: "灵感想法",
             path: "/others/ideas",
             children: [
               {
                 title: "配置化",
-                path: "/others/ideas/配置化",
+                path: "/others/ideas/配置化/1.md",
               },
             ],
           },
@@ -379,7 +371,7 @@ module.exports = {
           },
           {
             title: "oh-my-zsh",
-            path: "/others/oh-my-zsh.md",
+            path: "/others/oh-my-zsh/index.md",
           },
         ],
       },
