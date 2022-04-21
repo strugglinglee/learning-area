@@ -19,63 +19,155 @@ module.exports = {
     ],
     sidebar: [
       {
-        title: "VUE3.0",
-        path: "/vue3.0",
-        collapsable: true,
+        title: "CSS",
+        path: "/css",
         children: [
           {
-            title: "组合式api",
-            path: "/vue3.0/docs/组合式api.md",
+            title: "文字对齐",
+            path: "/css/line-height.md",
           },
           {
-            title: "SFC",
-            path: "/vue3.0/docs/SFC.md",
+            title: "flex",
+            path: "/css/flex.md",
+          },
+          {
+            title: "grid",
+            path: "/css/grid.md",
           },
         ],
       },
       {
-        title: "vue",
+        title: "javascript",
+        path: "/javascript",
+        children: [
+          {
+            title: "ES6+",
+            // path: "/es6+",
+            children: [
+              {
+                title: "proxy",
+                path: "/javascript/docs/es6+/proxy.md",
+              },
+              {
+                title: "Set&Map",
+                path: "/javascript/docs/es6+/Set&Map.md",
+              },
+            ],
+          },
+          {
+            title: "事件循环",
+            path: "/javascript/docs/事件循环",
+          },
+          {
+            title: "变量、作用域和内存",
+            path: "/javascript/docs/变量、作用域和内存.md",
+          },
+          {
+            title: "操作符",
+            path: "/javascript/docs/操作符.md",
+          },
+          {
+            title: "对象、类与面向对象",
+            path: "/javascript/docs/对象、类与面向对象.md",
+          },
+          {
+            title: "类与继承",
+            path: "/javascript/docs/类与继承.md",
+          },
+          {
+            title: "数据类型",
+            path: "/javascript/docs/数据类型.md",
+          },
+          {
+            title: "class",
+            path: "/javascript/docs/class.md",
+          },
+          {
+            title: "notes",
+            path: "/javascript/docs/notes.md",
+          },
+          {
+            title: "Object类型",
+            path: "/javascript/docs/Object类型.md",
+          },
+          {
+            title: "promise",
+            path: "/javascript/docs/promise.md",
+          },
+        ],
+      },
+      {
+        title: "VUE",
         path: "/vue",
         collapsable: true,
         children: [
           {
+            title: "VUE3.0",
+            path: "/vue/vue3.0",
+            collapsable: true,
+            children: [
+              {
+                title: "组合式api",
+                path: "/vue/vue3.0/docs/组合式api.md",
+              },
+              {
+                title: "SFC",
+                path: "/vue/vue3.0/docs/SFC.md",
+              },
+            ],
+          },
+          {
             title: "文档学习",
             path: "/vue/docs/vue官方文档学习.md",
           },
-        ],
-      },
-      {
-        title: "代码规范",
-        path: "/代码规范",
-        collapsable: true,
-        children: [
           {
-            title: "eslint",
-            path: "/代码规范/eslint.md",
-          },
-          {
-            title: "prettier",
-            path: "/代码规范/prettier.md",
+            title: "vue指令",
+            path: "/vue/docs/vue指令.md",
           },
         ],
       },
       {
-        title: "第三方插件使用",
+        title: "git",
+        path: "/git",
         children: [
           {
-            title: "moment",
-            path: "/第三方插件使用/moment.md",
+            title: "commit提交规范",
+            path: "/git/docs/commit提交规范.md",
+          },
+          {
+            title: "git-hooks",
+            path: "/git/docs/git-hooks.md",
           },
         ],
       },
       {
         title: "前端工程化",
-        // path: "/前端工程化",
+        path: "/前端工程化",
         collapsable: true,
         children: [
           {
-            title: "基础",
-            path: "/前端工程化/base.md",
+            title: "代码规范",
+            path: "/前端工程化/代码规范",
+            collapsable: true,
+            children: [
+              {
+                title: "eslint",
+                path: "/前端工程化/代码规范/eslint.md",
+              },
+              {
+                title: "prettier",
+                path: "/前端工程化/代码规范/prettier.md",
+              },
+            ],
+          },
+          {
+            title: "第三方插件使用",
+            children: [
+              {
+                title: "moment",
+                path: "/前端工程化/第三方插件使用/moment.md",
+              },
+            ],
           },
         ],
       },
@@ -91,52 +183,27 @@ module.exports = {
         ],
       },
       {
-        title: "效率提升",
-        // path: "/效率提升",
+        title: "业务相关",
+        path: "/业务相关",
         collapsable: true,
         children: [
           {
-            title: "代码片段",
-            path: "/效率提升/代码片段.md",
-          },
-          {
-            title: "vscode",
-            path: "/效率提升/vscode.md",
-          },
-        ],
-      },
-      {
-        title: "重要知识整理",
-        collapsable: true,
-        // path: "/图形学",
-        children: [
-          {
-            title: "事件循环",
-            path: "/重要知识整理/事件循环/事件循环.md",
-          },
-          {
-            title: "promise",
-            path: "/重要知识整理/promise/promise.md",
-          },
-          {
-            title: "类与继承",
-            path: "/重要知识整理/类与继承.md",
+            title: "微信小程序",
+            path: "/业务相关/wechat",
+            children: [
+              {
+                title: "小程序登录逻辑",
+                path: "/业务相关/wechat/小程序登录逻辑.md",
+              },
+              {
+                title: "小程序与普通网页开发的区别",
+                path: "/业务相关/wechat/小程序与普通网页开发的区别.md",
+              },
+            ],
           },
           {
             title: "权限控制",
-            path: "/重要知识整理/权限控制.md",
-          },
-          {
-            title: "class",
-            path: "/重要知识整理/class.md",
-          },
-          {
-            title: "vue指令",
-            path: "/重要知识整理/vue指令.md",
-          },
-          {
-            title: "webpack和vite的区别",
-            path: "/重要知识整理/webpack和vite的区别.md",
+            path: "/业务相关/权限控制.md",
           },
         ],
       },
@@ -164,48 +231,6 @@ module.exports = {
         ],
       },
       {
-        title: "组件库",
-        // path: "/图形学",
-        children: [
-          {
-            title: "收藏组件库",
-            path: "/组件库/收藏组件库.md",
-          },
-        ],
-      },
-      {
-        title: "CSS",
-        path: "/css",
-        children: [
-          {
-            title: "文字对齐",
-            path: "/css/line-height.md",
-          },
-          {
-            title: "flex",
-            path: "/css/flex.md",
-          },
-          {
-            title: "grid",
-            path: "/css/grid.md",
-          },
-        ],
-      },
-      {
-        title: "ES6+",
-        // path: "/es6+",
-        children: [
-          {
-            title: "proxy",
-            path: "/es6+/docs/proxy.md",
-          },
-          {
-            title: "flex",
-            path: "/es6+/docs/Set&Map.md",
-          },
-        ],
-      },
-      {
         title: "docker",
         path: "/docker",
         children: [
@@ -224,30 +249,6 @@ module.exports = {
           {
             title: "Container",
             path: "/docker/docs/Container.md",
-          },
-        ],
-      },
-      {
-        title: "git",
-        path: "/git",
-        children: [
-          {
-            title: "commit提交规范",
-            path: "/git/docs/commit提交规范.md",
-          },
-          {
-            title: "git-hooks",
-            path: "/git/docs/git-hooks.md",
-          },
-        ],
-      },
-      {
-        title: "ideas",
-        // path: "/ideas",
-        children: [
-          {
-            title: "配置化的思考",
-            path: "/ideas/配置化.md",
           },
         ],
       },
@@ -272,6 +273,113 @@ module.exports = {
                 path: "/node/深入浅出node.js/异步并发控制.md",
               },
             ],
+          },
+        ],
+      },
+      {
+        title: "vite",
+        path: "/vite",
+        children: [
+          {
+            title: "vite基础",
+            path: "/vite/docs/基础.md",
+          },
+          {
+            title: "webpack和vite的区别",
+            path: "/vite/docs/webpack和vite的区别.md",
+          },
+        ],
+      },
+      {
+        title: "其他",
+        collapsable: true,
+        path: "/others",
+        children: [
+          {
+            title: "promise",
+            path: "/重要知识整理/promise/promise.md",
+          },
+          {
+            title: "类与继承",
+            path: "/重要知识整理/类与继承.md",
+          },
+          {
+            title: "灵感想法",
+            path: "/others/ideas",
+            children: [
+              {
+                title: "配置化",
+                path: "/others/ideas/配置化",
+              },
+            ],
+          },
+          {
+            title: "名词解释",
+            path: "/others/名词解释",
+            children: [
+              {
+                title: "基础",
+                path: "/others/名词解释/基础.md",
+              },
+              {
+                title: "登录认证相关",
+                path: "/others/名词解释/登录认证相关.md",
+              },
+              {
+                title: "代码分割",
+                path: "/others/名词解释/代码分割.md",
+              },
+              {
+                title: "模块引入方式",
+                path: "/others/名词解释/模块引入方式.md",
+              },
+              {
+                title: "有限状态机",
+                path: "/others/名词解释/有限状态机.md",
+              },
+              {
+                title: "CJS, AMD, UMD 和 ESM",
+                path: "/others/名词解释/CJS, AMD, UMD 和 ESM.md",
+              },
+              {
+                title: "FLUX架构",
+                path: "/others/名词解释/FLUX架构.md",
+              },
+              {
+                title: "git-alias",
+                path: "/others/名词解释/git-alias.md",
+              },
+              {
+                title: "markdown语法",
+                path: "/others/名词解释/markdown语法.md",
+              },
+              {
+                title: "esbuild",
+                path: "/others/名词解释/esbuild.md",
+              },
+            ],
+          },
+          {
+            title: "效率提升",
+            path: "/others/效率提升",
+            children: [
+              {
+                title: "snippets基本语法",
+                path: "/others/效率提升/snippets基本语法.md",
+              },
+            ],
+          },
+          {
+            title: "vscode相关",
+            children: [],
+          },
+          {
+            title: "vue指令",
+            path: "/others/收藏组件库.md",
+          },
+          {
+            title: "oh-my-zsh",
+            path: "/others/oh-my-zsh.md",
           },
         ],
       },
