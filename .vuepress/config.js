@@ -252,16 +252,26 @@ module.exports = {
         ],
       },
       {
-        title: "git",
-        path: "/git",
+        title: "node",
+        path: "/node",
         children: [
           {
-            title: "commit提交规范",
-            path: "/git/docs/commit提交规范.md",
-          },
-          {
-            title: "git-hooks",
-            path: "/git/docs/git-hooks.md",
+            title: "深入浅出node.js",
+            path: "/node/深入浅出node.js",
+            children: [
+              {
+                title: "内存控制",
+                path: "/node/深入浅出node.js/内存控制.md",
+              },
+              {
+                title: "异步编程",
+                path: "/node/深入浅出node.js/异步编程.md",
+              },
+              {
+                title: "异步并发控制",
+                path: "/node/深入浅出node.js/异步并发控制.md",
+              },
+            ],
           },
         ],
       },
