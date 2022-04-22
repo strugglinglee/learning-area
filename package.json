@@ -21,8 +21,11 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@eslint/create-config": "^0.1.2",
+    "eslint": "^8.13.0",
     "husky": "^7.0.1",
     "lint-staged": "^11.2.6",
+    "prettier": "^2.6.2",
     "vuepress": "^1.9.7"
   },
   "husky": {
@@ -33,10 +36,6 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "prettier --write .",
-      "eslint  --fix"
-    ],
     "*.md": [
       "prettier --write"
     ]

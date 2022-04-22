@@ -198,6 +198,10 @@ module.exports = {
                 title: "小程序与普通网页开发的区别",
                 path: "/业务相关/wechat/小程序与普通网页开发的区别.md",
               },
+              {
+                title: "小程序事件",
+                path: "/业务相关/wechat/小程序事件.md",
+              },
             ],
           },
           {
