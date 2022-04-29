@@ -192,15 +192,15 @@ module.exports = {
             children: [
               {
                 title: '微信登录',
-                path: '/业务相关/wechat/登录/微信登录.md',
+                path: '/业务相关/登录/微信登录.md',
               },
               {
                 title: 'JWT',
-                path: '/业务相关/wechat/登录/JWT.md',
+                path: '/业务相关/登录/JWT.md',
               },
               {
                 title: '单点登录',
-                path: '/业务相关/wechat/登录/单点登录.md',
+                path: '/业务相关/登录/单点登录.md',
               },
             ],
           },
