@@ -215,6 +215,10 @@ module.exports = {
                 title: '小程序事件',
                 path: '/业务相关/wechat/小程序事件.md',
               },
+              {
+                title: '微信支付',
+                path: '/业务相关/wechat/微信支付.md',
+              },
             ],
           },
           {
