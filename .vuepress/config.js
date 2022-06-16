@@ -34,6 +34,10 @@ module.exports = {
             title: 'grid',
             path: '/css/grid.md',
           },
+          {
+            title: 'css尝试-画电风扇',
+            path: '/css/wanbao.md',
+          },
         ],
       },
       {
