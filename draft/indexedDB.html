@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var request = window.indexedDB.open("test");
+
+    request.onupgradeneeded = function (event) {
+      var db = event.target.result;
+      var objectStore = db.createObjectStore("table1", {
+        keyPath: "id",
+        autoIncrement: true,
+      });
+
+      objectStore.createIndex("name", "name", { unique: false });
+    };
+
+    request.onsuccess = function (event) {
+      var db = event.target.result;
+
+      var objectStore = db
+        .transaction(["table1"], "readwrite")
+        .objectStore("table1");
+
+      objectStore.add({ name: "a", age: 10 });
+      objectStore.add({ name: "b", age: 20 });
+
+      objectStore.index("name").get("b").onsuccess = function (event) {
+        console.log(event.target.result);
+      };
+
+      objectStore.put({ name: "b", age: 19 }).onsuccess = function (e) {
+        console.log("rr", e);
+      };
+    };
+  </script>
+</html>

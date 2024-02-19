@@ -19,10 +19,10 @@ Function.prototype.call2 = function (context) {
   for (let i = 1, len = arguments.length; i < len; i++) {
     args.push("arguments[" + i + "]");
   }
-  
-  console.log(args, 'args')
+
+  console.log(args, "args");
   const result = eval("context.fn(" + args + ")");
-  
+
   delete context.fn;
   return result;
 };
@@ -31,7 +31,7 @@ const test1 = function (a, b) {
   console.log(this.fn, a, b);
 };
 
-test1.call2({ name: 1,fn: 'annan' }, 2, 3);
+test1.call2({ name: 1, fn: "annan" }, 2, 3);
 
 // apply
 // apply 和 call 一样，唯一的区别就是 call 是传入不固定个数的参数，而 apply 是传入一个数组。
@@ -70,10 +70,10 @@ Function.prototype.apply2 = function (context, arr) {
 // 新函数可能被当做构造函数调用；
 // 函数可能有返回值；
 
-// bind方法和call很相似，第一参数也是this的指向，后面传入的也是一个参数列表(但是这个参数列表可以分多次传入，call则必须一次性传入所有参数)，但是它改变this指向后不会立即执行，而是返回一个永久改变this指向的函数。
-
 Function.prototype.bind2 = function (context) {
+  // 调用他的对象
   const self = this;
+  // 复制实际传参
   const args = Array.prototype.slice.call(arguments, 1);
 
   const fNOP = function () {};
@@ -90,3 +90,52 @@ Function.prototype.bind2 = function (context) {
   fBound.prototype = new fNOP();
   return fBound;
 };
+
+// bind方法和call很相似，第一参数也是this的指向，后面传入的也是一个参数列表(但是这个参数列表可以分多次传入，call则必须一次性传入所有参数)，但是它改变this指向后不会立即执行，而是返回一个永久改变this指向的函数。 再次调用之后的结果才和call一样
+
+Function.prototype.bind3 = function () {
+  var _this = this;
+  var context = arguments[0];
+  var arg = [].slice.call(arguments, 1);
+  // 返回一个函数
+  return function () {
+    arg = [].concat.apply(arg, arguments);
+    // 执行apply
+    _this.apply(context, arg);
+  };
+};
+
+//实现bind方法
+Function.prototype.bind3 = function (oThis) {
+  if (typeof this !== "function") {
+    // closest thing possible to the ECMAScript 5
+    // internal IsCallable function
+    throw new TypeError(
+      "Function.prototype.bind - what is trying to be bound is not callable"
+    );
+  }
+  var aArgs = Array.prototype.slice.call(arguments, 1);
+  var fToBind = this;
+  var fNOP = function () {};
+  var fBound = function () {
+    // this instanceof fBound === true时,说明返回的fBound被当做new的构造函数调用
+    return fToBind.apply(
+      this instanceof fBound ? this : oThis,
+      // 获取调用时(fBound)的传参.bind 返回的函数入参往往是这么传递的
+      aArgs.concat(Array.prototype.slice.call(arguments))
+    );
+  };
+  // 维护原型关系
+  if (this.prototype) {
+    // 当执行Function.prototype.bind()时, this为Function.prototype
+    // this.prototype(即Function.prototype.prototype)为undefined
+    fNOP.prototype = this.prototype;
+  }
+  // 下行的代码使fBound.prototype是fNOP的实例,因此
+  // 返回的fBound若作为new的构造函数,new生成的新对象作为this传入fBound,新对象的__proto__就是fNOP的实例
+  fBound.prototype = new fNOP();
+  return fBound;
+};
+var arr = [1, 11, 5, 8, 12];
+var max = Math.max.bind(null, arr[0], arr[1], arr[2], arr[3]);
+console.log(max(arr[4])); //12
